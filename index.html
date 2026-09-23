@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Humphrey Ramos Ala-an — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= ACTIVITY 1: INTRODUCE YOURSELF ================= -->
+  <header class="hero">
+    <div class="hero-inner">
+
+      <!-- EDIT ME: replace with images/profile.jpg once you have a real photo -->
+      <div class="portrait">
+        <img src="images/profile.jpg" alt="Portrait of King Humphrey Ramos Ala-an" onerror="this.style.display='none'; this.parentElement.classList.add('portrait--empty')">
+      </div>
+
+      <p class="eyebrow">Portfolio</p>
+      <h1 class="hero-name">King Humphrey Ramos Ala-an</h1>
+      <p class="hero-tagline">Building worlds in text before I build them in code.</p>
+
+      <p class="hero-intro">
+        I'm a Computer Science student who spends as much time inventing fictional
+        worlds as debugging real ones. Between assignments, I write fanfiction,
+        draw, and lose track of time in games I probably should have finished by now.
+      </p>
+
+      <a href="#about" class="btn-ornate">Learn More</a>
+    </div>
+  </header>
+
+  <div class="divider" role="presentation"><span></span></div>
+
+  <!-- ================= ACTIVITY 2: TELL YOUR STORY ================= -->
+  <section id="about" class="about">
+    <div class="section-inner">
+
+      <button type="button" class="about-trigger" id="aboutTrigger" aria-expanded="false" aria-controls="about-details">
+        <h2>About Me</h2>
+        <span class="about-hook">A writer, an artist, a world-builder &mdash; click to read more</span>
+        <span class="about-marker" aria-hidden="true"></span>
+      </button>
+
+      <div id="about-details" class="about-details">
+        <div class="about-details-inner">
+          <p>
+            I write fanfiction, mostly because I enjoy living in worlds after the
+            credits roll and asking what else could happen there. That habit spilled
+            over into drawing, and eventually into just liking games in general &mdash;
+            not only playing them, but noticing how they're built.
+          </p>
+
+          <p>
+            What actually pulls me in, though, is talking about how those worlds
+            work underneath the story: worldbuilding logic, economics, politics &mdash;
+            the systems that decide why a kingdom rises or a character makes the
+            choice they make. I bring that same instinct to code: I like knowing
+            why something works, not just that it does.
+          </p>
+
+          <div class="interests">
+            <p class="interests-label">Where my attention goes</p>
+            <ul class="interest-tags">
+              <li>Fanfiction writing</li>
+              <li>Art &amp; drawing</li>
+              <li>Games</li>
+              <li>Worldbuilding</li>
+              <li>Economics</li>
+              <li>Politics</li>
+            </ul>
+          </div>
+
+          <p class="goal">
+            My goal is to keep building &mdash; stories, worlds, and now, software &mdash;
+            one deliberate piece at a time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="presentation"><span></span></div>
+
+  <!-- ================= ACTIVITY 3: SHOW YOUR SKILLS ================= -->
+  <section id="skills" class="skills">
+    <div class="section-inner">
+      <h2>Skills</h2>
+
+      <div class="skill-grid">
+        <div class="skill-card">
+          <span class="skill-mark">I</span>
+          <h3>Worldbuilding</h3>
+          <p>Inventing settings with histories, systems, and internal logic.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-mark">II</span>
+          <h3>Creative Writing</h3>
+          <p>Fanfiction and long-form narrative, written for readers who stay.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-mark">III</span>
+          <h3>Digital Art</h3>
+          <p>Drawing characters and scenes straight out of the worlds I write.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-mark">IV</span>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, and JavaScript &mdash; structure, style, and behavior.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-mark">V</span>
+          <h3>Systems Thinking</h3>
+          <p>Reasoning through economics and politics, fictional or otherwise.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-mark">VI</span>
+          <h3>Git &amp; GitHub</h3>
+          <p>Committing early, committing often, and never fearing history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>King Humphrey Ramos Ala-an &middot; Built one activity at a time</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

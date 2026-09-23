@@ -1,0 +1,368 @@
+/* ============================================
+   TOKENS
+   ============================================ */
+:root {
+  --void:        #0b0a08;
+  --panel:       #15130f;
+  --panel-edge:  #26221a;
+  --ink:         #e9e2d3;
+  --ink-dim:     #a89f8c;
+  --gold:        #a98549;
+  --gold-bright: #c9a463;
+  --oxblood:     #4a1f1f;
+
+  --font-display: 'Cinzel', serif;
+  --font-body:    'Cormorant Garamond', serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+a { color: var(--gold-bright); }
+
+/* ============================================
+   HERO / ACTIVITY 1
+   ============================================ */
+.hero {
+  position: relative;
+  padding: 6rem 1.5rem 5rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(169, 133, 73, 0.10), transparent 55%),
+    var(--void);
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.portrait {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(from 180deg, var(--gold) 0%, var(--panel-edge) 35%, var(--gold) 70%, var(--panel-edge) 100%);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--panel);
+}
+
+/* Fallback shown if images/profile.jpg hasn't been added yet */
+.portrait--empty {
+  background: var(--panel);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.portrait--empty::after {
+  content: "K H A";
+  font-family: var(--font-display);
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  color: var(--gold-bright);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.hero-name {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font-style: italic;
+  color: var(--ink-dim);
+  font-size: 1.3rem;
+  margin: 0.9rem 0 1.8rem;
+}
+
+.hero-intro {
+  color: var(--ink);
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-ornate {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2.4rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-bright);
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.btn-ornate:hover {
+  color: var(--void);
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+}
+
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.divider span {
+  width: 9px;
+  height: 9px;
+  background: var(--void);
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ============================================
+   SHARED SECTION LAYOUT
+   ============================================ */
+.section-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.skills h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.03em;
+}
+
+.about p {
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+/* ============================================
+   ABOUT — clickable trigger
+   ============================================ */
+.about-trigger {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0 2.2rem 0 0;
+  margin: 0 0 1.8rem;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.about-trigger h2 {
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.about-hook {
+  display: block;
+  font-style: italic;
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+}
+
+.about-marker {
+  position: absolute;
+  right: 0;
+  top: 0.4rem;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.about-trigger:hover .about-marker,
+.about-trigger.is-open .about-marker {
+  background: var(--gold);
+}
+
+.about-trigger.is-open .about-marker {
+  transform: rotate(135deg);
+}
+
+.about-trigger:focus-visible {
+  outline: 1px solid var(--gold-bright);
+  outline-offset: 6px;
+}
+
+/* ============================================
+   ABOUT — collapsible details panel
+   ============================================ */
+.about-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.5s ease;
+}
+
+.about-details.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-details-inner {
+  padding-top: 0.4rem;
+}
+
+.about em {
+  color: var(--gold-bright);
+  font-style: italic;
+}
+
+/* ============================================
+   ABOUT / ACTIVITY 2 — interests + goal
+   ============================================ */
+.interests {
+  margin: 2.2rem 0;
+  padding: 1.4rem 1.6rem;
+  background: var(--panel);
+  border-left: 2px solid var(--gold);
+}
+
+.interests-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin: 0 0 0.8rem;
+}
+
+.interest-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.interest-tags li {
+  font-size: 1rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--panel-edge);
+  color: var(--ink-dim);
+}
+
+.goal {
+  font-style: italic;
+  color: var(--ink-dim);
+}
+
+/* ============================================
+   SKILLS / ACTIVITY 3 — reusable card
+   ============================================ */
+.skills {
+  background: var(--panel);
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  background: var(--panel-edge);
+  border: 1px solid var(--panel-edge);
+}
+
+.skill-card {
+  background: var(--panel);
+  padding: 2rem 1.5rem;
+  text-align: left;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  border-top: 2px solid transparent;
+}
+
+.skill-card:hover {
+  background: var(--void);
+  border-top-color: var(--gold);
+}
+
+.skill-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--panel-edge);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .hero { padding: 4rem 1.25rem 3.5rem; }
+  .section-inner { padding: 3.5rem 1.25rem; }
+  body { font-size: 18px; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn-ornate, .skill-card, .about-details, .about-marker { transition: none; }
+}
