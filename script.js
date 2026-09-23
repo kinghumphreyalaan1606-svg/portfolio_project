@@ -1,6 +1,6 @@
-// ================================================================
+// ---
 // About Me — click to expand/collapse
-// ================================================================
+// ---
 
 document.addEventListener('DOMContentLoaded', function () {
   var trigger = document.getElementById('aboutTrigger');
